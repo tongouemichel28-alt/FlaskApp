@@ -3,6 +3,7 @@ FROM python:3.13-slim
 
 # Étape 2 : copier les fichiers de dépendances
 WORKDIR /app
+
 COPY requirements.txt .
 
 # Étape 3 : installer les dépendances
