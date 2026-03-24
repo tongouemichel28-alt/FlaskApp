@@ -1,14 +1,14 @@
 name: CI Pipeline
 
-# Déclenchement du workflow
+
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
-  # Job pour installer Python et exécuter les tests
+  
   test:
     runs-on: ubuntu-latest
     steps:
@@ -29,9 +29,9 @@ jobs:
         run: |
           pytest
 
-  # Job pour construire et pousser l'image Docker
+  
   docker:
-    needs: test  # s'exécute seulement si le job "test" passe
+    needs: test  
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
